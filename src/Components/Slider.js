@@ -1,6 +1,6 @@
 
 import {motion} from "framer-motion";
-import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import './Slider.css';
 
 function Slider() { 

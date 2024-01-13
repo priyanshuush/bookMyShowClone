@@ -1,77 +1,31 @@
-import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+// Navbar.js
 
-import './Navbar.css';
+import React from 'react';
 
-import { Button } from './Button';
-
-
-function Navbar() {
-    const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
-    const handleClick =() => setClick(!click);
-    const closeMobileMenu =() => setClick(false);
-
-    const showButton =()=>{
-        if(window.innerWidth <= 960){
-            setButton(false);
-        }else{
-            setButton(true);
-        }
-    };
-
-    useEffect(()=>{
-        showButton()
-    }, []);
-
-    window.addEventListener('resize', showButton);
+const Navbar = () => {
   return (
-    <>
-    <nav className='navbar'> 
-    <div className='navbar-container'>
-        <Link to="/" className='navbar-logo' onClick={closeMobileMenu}>
-            BookMyShow <i className="fab fa-typo3"></i>
-        </Link>
-        <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars' } />
+    <nav className="bg-gradient-to-r from-gray-800 to-gray-600 p-6">
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="flex items-center">
+          <span className="text-white text-xl ml-4 font-semibold">React Navbar</span>
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-Item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                    Home
-                </Link>
-
-                
-            </li>
-            <li className='nav-Item'>
-                <Link to='/Details' className='nav-links' onClick={closeMobileMenu}>
-                    Movies
-                </Link>
-
-                
-            </li>
-            <li className='nav-Item'>
-                <Link to='/Ticket' className='nav-links' onClick={closeMobileMenu}>
-                    StandUps
-                </Link>
-
-                
-            </li>
-
-            <li className='nav-Item'>
-                <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-                    Sign Up
-                </Link>
-
-                
-            </li>
+        <ul className="flex space-x-6">
+          <li>
+            <a href="#" className="text-white hover:text-gray-300 transition duration-300">Home</a>
+          </li>
+          <li>
+            <a href="#" className="text-white hover:text-gray-300 transition duration-300">Movies</a>
+          </li>
+          <li>
+            <a href="#" className="bg-white text-gray-800 hover:bg-gray-500 hover:text-white text-sm px-4 py-2 rounded-full transition duration-300">Login</a>
+          </li>
+          <li>
+            <a href="#" className="bg-white text-gray-800 hover:bg-gray-500 hover:text-white text-sm px-4 py-2 rounded-full transition duration-300">Signup</a>
+          </li>
         </ul>
-        {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
-    </div>
-
+      </div>
     </nav>
-    </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
