@@ -1,0 +1,18 @@
+
+.trailer-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .video-div {
+    text-align: center;
+  }
+  
+  .video-frame {
+    width: 560px;
+    height: 315px;
+    /* Add other styles as needed */
+  }
+  
